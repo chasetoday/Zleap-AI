@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "case_count": 14,
+  "knowledge_base": {
+    "KB-001 V1.0": {
+      "name": "KB_001_Employee_Policies_V1.txt",
+      "bytes": 1692,
+      "sha256": "c8e17e60e752ddfabf044a73cc0a9285d2b5029aeb2a357b60c98aa05bb71c2b",
+      "lines": 35,
+      "missing_markers": []
+    },
+    "KB-002 V1.0": {
+      "name": "KB_002_Policy_Version_Registry_V1.txt",
+      "bytes": 1862,
+      "sha256": "cbade7158b231266caa69f454bcaffe2391c351e3dbbb7b819eff519ad1028cd",
+      "lines": 39,
+      "missing_markers": []
+    }
+  },
+  "issues": [],
+  "note": "KB-001 标题、版本与生效日期由原始设计文案恢复；original_uploads保留原始上传文件。"
+}

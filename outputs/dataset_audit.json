@@ -1,0 +1,25 @@
+{
+  "raw_rows": 35,
+  "removed_blank_rows": 21,
+  "valid_case_rows": 14,
+  "unique_case_ids": 14,
+  "phase_counts": {
+    "Pilot": 4,
+    "Benchmark": 10
+  },
+  "test_type_counts": {
+    "Fact Retrieval": 1,
+    "Multi-step Reasoning": 1,
+    "Unanswerable": 1,
+    "Multi-condition Reasoning": 5,
+    "Conflicting Information": 6
+  },
+  "normalizations": {
+    "测试类型拼写更正": 6,
+    "评分 N/A 规范化": 1
+  },
+  "pilot_scored_rows": 4,
+  "benchmark_unrun_rows": 10,
+  "problems": [],
+  "model_name_note": "Model_Name 源于用户原始记录；脚本未核验实际模型身份。"
+}

@@ -1,0 +1,31 @@
+Case_ID,Factual_Correctness,Citation_Correctness,Answer_Completeness,Groundedness,Evaluation_Notes,Run_Source
+TC005,Pass,Pass,Pass,Pass,正确识别480元未超过住宿报销500元上限及已提前取得书面批准，引用KB-001 §2.2；已取得该次原始API JSONL，模型与配置已核验。,qwen_20261026T041501Z.jsonl
+TC006,Pass,Pass,Pass,Pass,分别识别480元不超限、未获审批；引用KB-001 §2.2，保留“原则上不予报销”限定语。,qwen_20261026T041845Z.jsonl
+TC007,Fail,Pass,Pass,Fail,两项条件判断正确，但新增“超过部分需由员工自行承担”的确定性规则。KB-001 §2.2仅规定500元上限，未明确住宿超额费用的具体处理；§2.1只针对市内交通明确“超出部分由员工自行承担”。按严格证据支持标准将该附加断言判为证据不足；不等于证实实际处理一定不同。,qwen_20261026T041845Z.jsonl
+TC008,Pass,Pass,Pass,Pass,正确识别520元超限和缺少事前审批，并准确保留“原则上不予报销”。,qwen_20261026T041845Z.jsonl
+TC009,Pass,Pass,Pass,Pass,正确采用现行V1.0的80元，排除失效V0.9的60元及未生效V1.1的100元，引用匹配。,qwen_20261026T041845Z.jsonl
+TC010,Pass,Pass,Pass,Pass,正确匹配2026-09-15与有效期内的V0.9版本，得出60元，并引用KB-002 §1.2。,qwen_20261026T041845Z.jsonl
+TC011,Pass,Pass,Pass,Pass,正确指出100元草案未批准，现行上限为80元，依据充分。章节编号定位正确，个别“第1.3章”属于节/章称谓不严谨。,qwen_20261026T041845Z.jsonl
+TC012,Pass,Pass,Pass,Pass,正确识别2026-09-15历史住宿上限400元，未错误套用现行500元。存在“V0.版本”排版遗漏，不影响事实和引用判断。,qwen_20261026T041845Z.jsonl
+TC013,Pass,Pass,Pass,Pass,正确采用现行住宿500元、事前书面审批要求，排除600元未生效草案。,qwen_20261026T041845Z.jsonl
+TC014,Pass,Fail,Pass,Pass,结论正确：现有资料不能确保2026-11-15仍采用80元；但虚构引用“KB-002 V1.0第四章”，该文件仅有两章。类似更新规则存在于KB-001第四章及KB-002 §2.1—2.4；本例只将Citation判Fail，相关制度结论仍有其他证据支持。,qwen_20261026T041845Z.jsonl
+TC015,Pass,Pass,Pass,Pass,正确识别入职满30天正式员工每月享有1天带薪个人事务假，且不可跨月累计；引用KB-001 §1.1。,qwen_20261026T043711Z.jsonl
+TC016,Pass,Pass,Pass,Pass,正确回答入职后30个自然日内完成信息安全培训；引用KB-001 §3.1。,qwen_20261026T043711Z.jsonl
+TC017,Pass,Pass,Pass,Pass,正确回答满分100分、80分及以上合格；引用KB-001 §3.2。,qwen_20261026T043711Z.jsonl
+TC018,Pass,Pass,Pass,Pass,正确回答差旅结束后7个自然日内提交报销申请；引用KB-001 §2.3，额外引用原文中的相关凭证不影响判断。,qwen_20261026T043711Z.jsonl
+TC019,Pass,Pass,Pass,Pass,正确识别连续病假超过2个工作日的证明要求；引用KB-001 §1.2。,qwen_20261026T043711Z.jsonl
+TC020,Pass,Pass,Pass,Pass,正确回答由人力资源部负责解释员工制度；引用KB-001第四章。,qwen_20261026T043711Z.jsonl
+TC021,Pass,Pass,Pass,Pass,正确识别入职第29天未满足满30天资格；引用KB-001 §1.1。,qwen_20261026T043711Z.jsonl
+TC022,Pass,Pass,Pass,Pass,正确识别申请已提前提交但未经主管批准，尚不能直接使用带薪个人事务假；引用KB-001 §1.1。,qwen_20261026T043711Z.jsonl
+TC023,Pass,Pass,Pass,Pass,正确识别80分达到培训合格线；引用KB-001 §3.2。,qwen_20261026T043711Z.jsonl
+TC024,Pass,Pass,Pass,Pass,正确判断79分未合格、首次考试后7个自然日内可参加一次补考；引用KB-001 §3.2。,qwen_20261026T043711Z.jsonl
+TC025,Fail,Pass,Pass,Fail,正确指出正好2个工作日不触发“超过2个工作日”条件，但接着绝对表述“因此不需要提供医疗证明”。KB-001仅确定本条款下的强制证明触发条件，不能排除其他可能的证明要求。按严格证据支持规则判Factual与Groundedness Fail；主问题的阈值判断本身正确。,qwen_20261026T043711Z.jsonl
+TC026,Pass,Pass,Pass,Pass,正确识别第8个自然日提交超过7个自然日时限；未编造逾期处理或处罚；引用KB-001 §2.3。,qwen_20261026T043711Z.jsonl
+TC027,Pass,Pass,Pass,Pass,逐项正确核对入职资格、当月额度、提前1个工作日申请及已获审批；均有KB-001 §1.1支持。,qwen_20261026T043711Z.jsonl
+TC028,Fail,Pass,Pass,Fail,模型结尾正确指出本月带薪个人事务假已用完且不能跨月累计，但分项“额度：符合”与本月已用满1天相矛盾。应判剩余额度不符合；按严格Rubric将Factual与Groundedness判Fail。文中“除非作为无薪假或其他类型假期”只是未被证实的假设，不能视为既有福利规则。,qwen_20261026T043711Z.jsonl
+TC029,Pass,Pass,Pass,Pass,正确拒绝给出病假工资比例，明确KB-001 §1.2没有病假工资计算规则。,qwen_20261026T043711Z.jsonl
+TC030,Pass,Pass,Pass,Pass,正确拒绝编造餐费或伙食补助额度，说明KB-001差旅章节未规定该项目。,qwen_20261026T043711Z.jsonl
+TC031,Pass,Pass,Pass,Pass,正确识别KB-001未规定远程办公电脑采购补贴，没有推定补贴存在或不存在。,qwen_20261026T043711Z.jsonl
+TC032,Pass,Pass,Pass,Pass,正确指出KB-001只规定一次补考，第三次考试是否存在及其日期均未规定。,qwen_20261026T043711Z.jsonl
+TC033,Pass,Pass,Pass,Pass,正确区分2026-09-15 V0.9与2026-10-01生效的V1.0，没有将现行发票要求倒推历史版本。存在“V0.版本”笔误与将“1.2节”写成“1.2章”，但文档定位和事实判断仍正确。,qwen_20261026T043711Z.jsonl
+TC034,Pass,Pass,Pass,Pass,正确指出截至2026-10-24 V1.1草案尚未批准且未确定生效日期；引用KB-002 §1.3。,qwen_20261026T043711Z.jsonl

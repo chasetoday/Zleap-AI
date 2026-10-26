@@ -1,0 +1,103 @@
+{
+  "method": "preliminary AI-assisted fixed-rubric review; not independently blinded",
+  "case_range": "TC005-TC034",
+  "runs_count": 30,
+  "compare_includes_TC005_for_scoring": true,
+  "paired_token_cases": 30,
+  "score_summary": {
+    "Full Context": {
+      "n": 30,
+      "all_pass": 26,
+      "Factual_Correctness": 27,
+      "Citation_Correctness": 29,
+      "Answer_Completeness": 30,
+      "Groundedness": 27
+    },
+    "RAG": {
+      "n": 30,
+      "all_pass": 29,
+      "Factual_Correctness": 29,
+      "Citation_Correctness": 30,
+      "Answer_Completeness": 30,
+      "Groundedness": 29
+    }
+  },
+  "flagged_full_context": [
+    "TC007",
+    "TC014",
+    "TC025",
+    "TC028"
+  ],
+  "flagged_rag": [
+    "TC028"
+  ],
+  "paired_usage": {
+    "full_context": {
+      "prompt_tokens": 21028,
+      "completion_tokens": 4142,
+      "total_tokens": 25170
+    },
+    "rag": {
+      "prompt_tokens": 15216,
+      "completion_tokens": 3425,
+      "total_tokens": 18641
+    }
+  },
+  "paired_token_reduction_pct": {
+    "prompt_tokens": 27.64,
+    "completion_tokens": 17.31,
+    "total_tokens": 25.94
+  },
+  "rag_usage_all_30": {
+    "prompt_tokens": 15216,
+    "completion_tokens": 3425,
+    "total_tokens": 18641
+  },
+  "rag_latency_seconds_mean": 4.391,
+  "rag_top_k": 5,
+  "retriever": "section_bm25_character_bigrams_v1",
+  "rag_retrieval_count_by_case": {
+    "TC005": 5,
+    "TC006": 5,
+    "TC007": 5,
+    "TC008": 5,
+    "TC009": 5,
+    "TC010": 5,
+    "TC011": 5,
+    "TC012": 5,
+    "TC013": 5,
+    "TC014": 5,
+    "TC015": 5,
+    "TC016": 5,
+    "TC017": 5,
+    "TC018": 5,
+    "TC019": 5,
+    "TC020": 5,
+    "TC021": 5,
+    "TC022": 5,
+    "TC023": 5,
+    "TC024": 5,
+    "TC025": 5,
+    "TC026": 5,
+    "TC027": 5,
+    "TC028": 5,
+    "TC029": 5,
+    "TC030": 5,
+    "TC031": 5,
+    "TC032": 5,
+    "TC033": 5,
+    "TC034": 5
+  },
+  "model": "qwen3.7-plus",
+  "enable_thinking": false,
+  "max_tokens": 512,
+  "all_kb_versions_match": true,
+  "all_system_prompt_hashes_match": true,
+  "wording_boundary": "Token differences are descriptive for 30 paired API records; accuracy labels are AI-assisted preliminary rubric ratings on the same 30 cases.",
+  "all_test_questions_match_for_30_api_pairs": true,
+  "full_context_usage_all_30": {
+    "prompt_tokens": 21028,
+    "completion_tokens": 4142,
+    "total_tokens": 25170
+  }
+}
