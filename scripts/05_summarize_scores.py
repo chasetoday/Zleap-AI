@@ -4,7 +4,7 @@ from pathlib import Path
 import csv,collections,json
 ROOT=Path(__file__).resolve().parents[1]
 scores_path=ROOT/'outputs/scoring_benchmark_30.csv'
-data_path=ROOT/'data/processed/eval_cases_benchmark_v03_scored.csv'
+data_path=ROOT/'data/benchmark.csv'
 with scores_path.open(encoding='utf-8-sig',newline='') as f:scores=list(csv.DictReader(f))
 with data_path.open(encoding='utf-8-sig',newline='') as f:cases={r['Case_ID']:r for r in csv.DictReader(f)}
 assert len(scores)==30

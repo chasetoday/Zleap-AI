@@ -35,14 +35,14 @@ def main():
     p.add_argument('--endpoint',default=os.getenv('QWEN_API_ENDPOINT','https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'),help='API HTTP endpoint，必须与API Key地域匹配')
     args=p.parse_args()
     if not 1<=args.limit<=30:sys.exit('单次只允许1至30条')
-    path=ROOT/'data'/'processed'/'eval_cases_benchmark_v02.csv'
+    path=ROOT/'data'/'benchmark.csv'
     with path.open(encoding='utf-8-sig',newline='') as f: allcases=list(csv.DictReader(f))
     cases=[r for r in allcases if r.get('Evaluation_Phase','').lower()=='benchmark']
     ids=[x['Case_ID'] for x in cases]
     if args.start_case not in ids:sys.exit('未找到可运行的Benchmark起始编号：'+args.start_case)
     cases=cases[ids.index(args.start_case):][:args.limit]
     if not cases:sys.exit('没有待运行的测试题')
-    sys_prompt=(ROOT/'config'/'evaluation_prompt_v1.txt').read_text(encoding='utf-8')
+    sys_prompt=(ROOT/'config'/'evaluation_prompt.txt').read_text(encoding='utf-8')
     prepared=[]
     for row in cases:
         doc,manifest=docs_for(row)

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "case_count": 14,
+  "case_count": 34,
   "knowledge_base": {
     "KB-001 V1.0": {
       "name": "KB_001_Employee_Policies_V1.txt",
@@ -18,5 +18,5 @@
     }
   },
   "issues": [],
-  "note": "KB-001 标题、版本与生效日期由原始设计文案恢复；original_uploads保留原始上传文件。"
+  "note": "KB-001 标题、版本与生效日期由原始设计文案恢复；本公开仓库不包含最初导出的原始文件。"
 }

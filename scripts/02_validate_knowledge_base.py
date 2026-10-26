@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Validate project KB snapshots against existing evaluation case references. """
+"""Validate project KB snapshots against existing evaluation case references. Stdlib only."""
 from pathlib import Path
 import csv, hashlib, json, sys
 ROOT=Path(__file__).resolve().parents[1]
 KB=ROOT/'knowledge_base'
-DATA=ROOT/'data'/'processed'/'eval_cases_clean_v01.csv'
+DATA=ROOT/'data'/'benchmark.csv'
 OUT=ROOT/'outputs'/'knowledge_base_audit.json'
 FILES={
   'KB-001 V1.0':'KB_001_Employee_Policies_V1.txt',
@@ -35,7 +35,7 @@ def main():
         for item in ids:
             if item not in FILES:problems.append(row['Case_ID']+' 引用未知知识库：'+item)
             elif item not in snaps:problems.append(row['Case_ID']+' 知识库尚未就绪：'+item)
-    report={'status':'PASS' if not problems else 'FAIL','case_count':len(cases),'knowledge_base':snaps,'issues':problems,'note':'KB-001 标题、版本与生效日期由原始设计文案恢复；original_uploads保留原始上传文件。'}
+    report={'status':'PASS' if not problems else 'FAIL','case_count':len(cases),'knowledge_base':snaps,'issues':problems,'note':'KB-001 标题、版本与生效日期由原始设计文案恢复；本公开仓库不包含最初导出的原始文件。'}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print('知识库检查：'+report['status'])

@@ -156,7 +156,7 @@ def main():
     if not 1 <= args.limit <= 30 or not 1 <= args.top_k <= 6:
         sys.exit("limit必须在1-30之间，top-k必须在1-6之间")
 
-    path = ROOT / "data" / "processed" / "eval_cases_benchmark_v02.csv"
+    path = ROOT / "data" / "benchmark.csv"
     with path.open(encoding="utf-8-sig", newline="") as f:
         rows = [r for r in csv.DictReader(f) if r.get("Evaluation_Phase", "").lower() == "benchmark"]
     ids = [r["Case_ID"] for r in rows]
@@ -164,7 +164,7 @@ def main():
         sys.exit("找不到测试编号: " + args.start_case)
     selected = rows[ids.index(args.start_case):][:args.limit]
 
-    base_prompt = (ROOT / "config" / "evaluation_prompt_v1.txt").read_text(encoding="utf-8")
+    base_prompt = (ROOT / "config" / "evaluation_prompt.txt").read_text(encoding="utf-8")
     # Reuse the same baseline instructions to make full-context vs retrieval more comparable.
     # One word changes: "知识库文件" now refers to retrieved sections provided below.
     print("模式：" + ("DRY RUN（只检索，不收费）" if args.dry_run else "LIVE RAG（调用Qwen API，可能收费）"))
